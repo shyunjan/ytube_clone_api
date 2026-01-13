@@ -1,0 +1,12 @@
+{
+  "useTabs": false,
+  "singleQuote": false,
+  "trailingComma": "es5",
+  "quoteProps": "consistent",
+  "printWidth": 100,
+  "bracketSameLine": true,
+  "bracketSpacing": true,
+  "arrowParens": "avoid",
+  "plugins": ["prettier-eslint"],
+  "pluginSearchDirs": ["."]
+}

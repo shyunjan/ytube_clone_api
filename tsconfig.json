@@ -1,0 +1,61 @@
+{
+  // Visit https://aka.ms/tsconfig to read more about this file
+  "compilerOptions": {
+    // Environment Settings
+    // See also https://aka.ms/tsconfig/module
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "esModuleInterop": true,
+    "target": "ES2023",
+
+    // File Layout
+    // "rootDir": "./src",
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "paths": {
+      "*": ["*", "node_modules/*", "src/types/*"],
+      "@*": ["src/*"]
+    },
+    // "typeRoots": ["./node_modules/@types", "./src/types"],
+
+    // Other Outputs
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+
+    // Stricter Typechecking Options
+    "strict": true,
+    "strictNullChecks": true,
+    "noImplicitAny": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+
+    // Style Options
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noImplicitOverride": true,
+
+    // Recommended Options
+    "incremental": true,
+    "allowJs": true,
+    "checkJs": false,
+    // "jsx": "react-jsx", // React 개발에만 적용
+    // "verbatimModuleSyntax": true, // js파일로 compile시 import type 문은 제거하거나 rewrite한다.
+    "isolatedModules": true,
+    "noUncheckedSideEffectImports": true,
+    "moduleDetection": "auto",
+    "skipLibCheck": true, // Skip type checking all .d.ts files.
+    "resolveJsonModule": true,
+    "resolvePackageJsonExports": true,
+    "removeComments": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true
+  },
+  "include": ["src/**/*.ts", "src/**/*.js", "test/**/*.ts"],
+  "exclude": ["node_modules"]
+}
