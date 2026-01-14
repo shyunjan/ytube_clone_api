@@ -4,6 +4,8 @@ import { FastifyAdapter, type NestFastifyApplication } from "@nestjs/platform-fa
 import { Logger } from "@nestjs/common";
 import { AppModule } from "./app.module";
 
+declare const module: any;
+
 async function bootstrap() {
   const logger = new Logger(bootstrap.name);
 
@@ -19,11 +21,16 @@ async function bootstrap() {
     }
   );
 
-  const port = 3000;
   // app.useGlobalFilters(new AllExceptionsFilter(app.get(HttpAdapterHost)));
 
-  await app.listen(port, "0.0.0.0");
+  const defaultPort = 3000;
+  await app.listen(process.env["PORT"] ?? defaultPort, "0.0.0.0");
   logger.log(`YTube Clone API Server is Running On: ${await app.getUrl()}`);
+
+  if (module.hot) {
+    module.hot.accept();
+    module.hot.dispose(() => app.close());
+  }
 }
 
 bootstrap();

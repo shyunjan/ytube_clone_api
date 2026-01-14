@@ -1,0 +1,13 @@
+{
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "src",
+  "compilerOptions": {
+    "builder": {
+      "type": "swc",
+      "options": { "extensions": [".ts", ".tsx", ".js", ".jsx"] }
+    },
+    "assets": [{ "include": "**/*.hbs" }, { "include": "./config/env/**" }],
+    "watchAssets": true,
+    "typeCheck": true
+  }
+}

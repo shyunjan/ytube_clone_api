@@ -9,6 +9,6 @@ export class AppController {
 
   @Get("/welcome")
   welcome(): string {
-    return "Welcome to YTube Clone API Server! 🎉🎊🎐";
+    return "Welcome to YTube Clone API Server!! 🎉🎊🎐";
   }
 }
